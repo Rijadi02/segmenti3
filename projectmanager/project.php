@@ -2,6 +2,9 @@
 require_once '../includes/init.php';
 $user = isAuth(1);
 $project = Project::find_by_id($_GET['id']);
+if($project->manager != $user->id){
+    redirect('/segmenti3/projectmanager/index');
+}
 $agents_working = 0;
 
 foreach(SubProject::find_by_project($project->id) as $subproject){

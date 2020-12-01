@@ -178,6 +178,23 @@
                     </div>
                     <?php endif; ?>  
 
+                    <?php if($user->role_id == 2): ?>
+                    <div class="sidenav-menu">
+                        <div class="nav accordion" id="accordionSidenav">
+                            <div class="sidenav-menu-heading">Site Manager</div>
+                            <a class="nav-link" href="agents">
+                                <div class="nav-link-icon"><i data-feather="users"></i></div>
+                                Your Agents
+                            </a>
+                            <a class="nav-link" href="index">
+                                <div class="nav-link-icon"><i data-feather="bar-chart"></i></div>
+                                Your Projects
+                            </a>
+                           
+                        </div>
+                    </div>
+                    <?php endif; ?>  
+
                     <div class="sidenav-footer">
                         <div class="sidenav-footer-content">
                             <div class="sidenav-footer-subtitle">Logged in as:</div>

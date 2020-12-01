@@ -1,10 +1,7 @@
 <?php
 require_once '../includes/init.php';
 $user = isAuth(2);
-
 ?>
-
-
 <div class="container mt-n10">
     <div class="row">
         <div class="col-lg-12">

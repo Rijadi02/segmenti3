@@ -9,7 +9,6 @@ class SubProject extends Db_object
     public $site_manager;
     public $agents;
 
-
     public static function find_by_project($id)
     {
         return self::find_by_query("SELECT * FROM " . self::$db_table . " WHERE project_id = '" . $id . "'");
@@ -22,5 +21,13 @@ class SubProject extends Db_object
     public static function find_by_sitemanager($id)
     {
         return self::find_by_query("SELECT * FROM " . self::$db_table . " WHERE site_manager = '" . $id . "'");
-    }    
+    }
+
+    public static function find_by_sitemanager_and_project($user, $project_id)
+    {
+        return self::find_by_query("SELECT * FROM " . self::$db_table . " WHERE site_manager = '" . $user . "' AND project_id =   '" . $project_id . "' LIMIT 1");
+        return !empty($the_result_array) ? array_shift($the_result_array) : false;
+    }
+
+    
 }
